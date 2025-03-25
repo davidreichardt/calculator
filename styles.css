@@ -3,10 +3,19 @@
 }
 
 .calculator-container {
-  width: 507px;
-  height: 650px;
+  width: 503px;
+  height: 775px;
   margin: 40px auto 0;
   border: 1px solid blue;
+}
+
+.display {
+  width: 100%;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
 }
 
 .calculation {
@@ -23,49 +32,44 @@
   font-size: 30px;
 }
 
-.display {
-  width: 100%;
-  height: 150px;
+.input-container {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-end;
+  flex-wrap: wrap;
 }
 
-.input-container {
-    display: flex;
-
+.function-items {
+  height: 125px;
+  display: flex;
+  
 }
 
 .number-grid {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row-reverse;
-    justify-content: flex-end;
-    width: 381px;
+  width: 375px;
+  height: 500px;
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
 }
 
-.number {
-    border: .5px solid black;
-    width: 125px;
-    height: 125px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
+.operator-items {
+  height: 500px;
 }
 
-.operator-grid {
-    display: flex;
-    flex-direction: column;
-    width: 126px;
-}
-
+.function,
+.number,
 .operator {
-    width: 125px;
-    height: 125px;
-    border: .5px solid black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 0.5px solid black;
+  width: 125px;
+  height: 125px;
+}
+
+.equal {
+  flex: 1;
+}
+
+.number-grid :nth-child(10) {
+  order: 1;
 }
