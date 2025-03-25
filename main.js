@@ -1,23 +1,51 @@
-let number1 = 0,
-  number2 = 0,
-  operator = '';
-const ADD = (number1, number2) => number1 + number2;
-const SUBTRACT = (number1, number2) => number1 - number2;
-const MULTIPLY = (number1, number2) => number1 * number2;
-const DIVIDE = (number1, number2) => number1 / number2;
+let number1 = '',
+  number2 = '',
+  operator = '',
+  result = '';
+const numbers = document.querySelectorAll('.number');
+const operators = document.querySelectorAll('.operator');
+const clearButton = document.getElementById('clear');
+const equal = document.getElementById('equal');
+const decimal = document.getElementById('decimal');
+const backspace = document.getElementById('backspace');
+const negative = document.getElementById('negative');
 
-function operate(number1, number2, operator) {
+clearButton.addEventListener('click', function () {
+  number1 = '';
+  number2 = '';
+  operator = '';
+  result = '';
+});
+
+equal.addEventListener('click', function () {
   switch (operator) {
     case '+':
-      ADD(number1, number2);
+      result = parseInt(number1) + parseInt(number2);
+      console.log(result);
       break;
     case '-':
-      SUBTRACT(number1, number2);
+      result = parseInt(number1) - parseInt(number2);
       break;
     case '*':
-      MULTIPLY(number1, number2);
+      result = parseInt(number1) * parseInt(number2);
       break;
     case '/':
-      DIVIDE(number1, number2);
+      result = parseInt(number1) / parseInt(number2);
   }
-}
+});
+
+numbers.forEach((number) => {
+  number.addEventListener('click', (e) => {
+    if (operator === '') {
+      number1 += e.target.textContent;
+    } else {
+      number2 += e.target.textContent;
+    }
+  });
+});
+
+operators.forEach((op) => {
+  op.addEventListener('click', (e) => {
+    operator = e.target.textContent;
+  });
+});

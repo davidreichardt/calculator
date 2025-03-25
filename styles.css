@@ -57,6 +57,7 @@
 
 .function,
 .number,
+.equal,
 .operator {
   display: flex;
   justify-content: center;
@@ -66,7 +67,7 @@
   height: 125px;
 }
 
-.equal {
+#equal {
   flex: 1;
 }
 
